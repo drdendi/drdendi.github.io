@@ -279,3 +279,6 @@ nav, footer{
 .copyright{
     color: grey;
 }
+a:link, a:hover, a:visited{
+    color:black;
+}
