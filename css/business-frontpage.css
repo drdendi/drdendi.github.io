@@ -1,0 +1,276 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+    background-color: #53844f;
+    color:black;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.business-header {
+  height: 50vh;
+  min-height: 300px;
+  background: url('../img/home.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#headertitle{
+    background-color: black;
+    width: 100%;
+    color:white;
+    text-align: center;
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.card {
+  height: 100%;
+}
+/*Added*/
+nav, footer{
+    background-color: black;
+}
+.sr-only{
+    color:#53844f !important;
+}
+.link{
+    color:darkslategray;
+}
+.contentfarm{
+    padding:5%;
+}
+.carousel-inner{
+  width:100%;
+  max-height: 400px !important;
+}
+/*slide images: BOARDING*/
+#bg1{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/boarding/3.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bg2{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/boarding/2.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bg3{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/boarding/5.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bg4{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/boarding/1.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center bottom;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bg5{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/boarding/4.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center bottom;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+
+/*LESSON*/
+#bgl1{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/lesson/1.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bgl2{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/lesson/2.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bgl3{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/lesson/3.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bgl4{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/lesson/4.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center 30%;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+#bgl5{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/lesson/5.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+    }
+/*RETIREMENT*/
+#bgr1{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/retirement/1.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+}
+#bgr2{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/retirement/2.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+}
+#bgr3{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/retirement/3.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center bottom;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+}
+#bgr4{
+      box-sizing: border-box; 
+      display: block; 
+      width: 100%;  
+      height: 60vh; /* 60vh = 60% of the viewport height*/
+      padding: 0; /* No padding */
+      margin: 0; /* No margins */
+      background-image: url("../img/retirement/4.jpg"); 
+      background-repeat: no-repeat;
+      background-position: center center;  
+      background-size: cover; /* Cover all available space. */ 
+      /* If you want the whole image visible try 'contain'*/
+}
+#footersale{ 
+    position: fixed; 
+    bottom: 0;
+    width:100%;
+}
+#contact{
+    color:white;
+    text-align: center;
+    padding-top: 10px;
+}
+#contact img{
+   height:15px;
+}
+.contactbar{
+    color: green;
+    font-size:20px;
+    font-weight: bold;
+}
+#nav li a:link, #logo, #contact a:link{
+    text-decoration: none;
+    color: white;
+}
+#nav li a:visited, #logo, #contact a:visited{
+    text-decoration: none;
+    color: white;
+}
+.navbar-brand{
+    font-family: "Times New Roman", Times, serif;
+}
+.copyright{
+    color: grey;
+}
