@@ -146,7 +146,7 @@ nav, footer{
       margin: 0; /* No margins */
       background-image: url("../img/lesson/2.jpg"); 
       background-repeat: no-repeat;
-      background-position: center bottom;  
+      background-position: center center;  
       background-size: cover; /* Cover all available space. */ 
       /* If you want the whole image visible try 'contain'*/
     }
@@ -185,7 +185,7 @@ nav, footer{
       margin: 0; /* No margins */
       background-image: url("../img/lesson/5.jpg"); 
       background-repeat: no-repeat;
-      background-position: center center;  
+      background-position: center bottom;  
       background-size: cover; /* Cover all available space. */ 
       /* If you want the whole image visible try 'contain'*/
     }
