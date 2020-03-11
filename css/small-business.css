@@ -9,11 +9,14 @@ body {
 .serviceImg{
     padding-top: 20px;
 }
+.campImg{
+    padding-bottom: 20px;
+}
 .serviceImgL{
-    padding-left: 0px;
+    padding-left: 15px;
 }
 .serviceImgR{
-    padding-right: 0px;
+    padding-right: 15px;
 }
 @media only screen and (max-width: 575px) {
     .serviceImgL, .serviceImgR{
