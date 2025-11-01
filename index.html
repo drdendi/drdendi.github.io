@@ -1,181 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stony Brook Stables | Princeton, NJ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+        :root {
+            --hunter-green: #2d5016;
+            --dark-green: #1a3009;
+            --black: #1a1a1a;
+            --muted-gold: #c9a961;
+            --light-gold: #d4b876;
+            --cream: #f5f1e8;
+            --white: #ffffff;
+        }
 
-  <title>Stony Brook Stables</title>
+        body {
+            font-family: 'Georgia', serif;
+            color: var(--black);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        /* Navigation */
+        nav {
+            background-color: var(--dark-green);
+            padding: 0.75rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-  <!-- Custom styles for this template -->
-  <link href="css/small-business.css" rel="stylesheet">
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-</head>
+        .logo {
+            font-size: 1.5rem;
+            color: var(--muted-gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-<body>
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Stony Brook Stables</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-<!--
-          <li class="nav-item">
-            <a class="nav-link" href="events.html">Events</a>
-          </li>
--->
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sale.html">For Sale or Lease</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gallery.html">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+        }
 
-  <!-- Page Content -->
-  <div class="container">
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
 
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="img/home.jpg" alt="">
-      </div>
-      <!-- /.col-lg-8 -->
-      <div class="col-lg-5">
-        <h1 class="font-weight-light">Stony Brook Stables</h1>
-        <p>Stony Brook Stables is an equine boarding and riding lesson facility located in Princeton, NJ. We offer high quality, detail oriented care for your horse as well as riding lessons for beginner through intermediate riders in a positive, friendly atmosphere!</p>
-        <a class="btn btn-success" href="contact.html">Visit Us</a>
-      </div>
-      <!-- /.col-md-4 -->
-    </div>
-    <!-- /.row -->
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--muted-gold);
+            transition: all 0.3s;
+        }
 
-    <!-- Call to Action Well -->
-<!--
-    <div class="card text-white bg-warning my-5 py-4 text-center">
-      <div class="card-body">
-        <p class="text-dark m-0">2025 Summer Camp now open for enrollment! Spots Limited! Please contact us to <a href="events.html#Camp" class="stretched-link text-dark" id="homeLink">learn more</a> and to reserve a place.</p>
-      </div>
-    </div>
--->
-      
-    <div class="card text-white bg-success my-5 py-4 text-center">
-      <div class="card-body">
-        <p class="text-white m-0">Now accepting new stall, retirement and field boarders! Please <a href="contact.html" class="stretched-link" id="homeLink">contact us</a> for more details or to arrange a farm visit.</p>
-      </div>
-    </div>
+        nav a:hover, nav a.active {
+            color: var(--muted-gold);
+        }
 
-    <!-- Content Row -->
-    <div class="row">
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
 
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Boarding</h2>
-            <p class="card-text">Stony Brook Farm employees take pride in being friendly, detail oriented, highly motivated horse people. We offer show barn level care without the show barn atmosphere.</p>
-          </div>
-          <div class="card-footer">
-            <a href="services.html" class="btn btn-success btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Lesson Program</h2>
-            <p class="card-text">Stony Brook Farm offers English or Western riding lessons to beginner - intermediate riders. The quiet atmosphere of the barn and friendly instructors will make you or your child feel welcome and comfortable to grow as a horse person and most importantly - enjoy it!</p>
-          </div>
-          <div class="card-footer">
-            <a href="services.html#Lesson" class="btn btn-success btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Retirement Boarding</h2>
-            <p class="card-text">Your senior horse will enjoy a quiet and peaceful retirement with all the spoils they deserve and you will enjoy the peace of mind of knowing your best equine companion is comfortable and well cared for.</p>
-          </div>
-          <div class="card-footer">
-            <a href="services.html#RBoarding" class="btn btn-success btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--hunter-green);
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--muted-gold);
+            padding-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+        }
+
+        /* Home Page Images */
+        .home-images {
+            margin: 3rem 0;
+        }
+
+        .home-image {
+            width: 100%;
+            height: 400px;
+            /* background: linear-gradient(135deg, var(--hunter-green), var(--muted-gold)); */
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-style: italic;
+            font-size: 1.5rem;
+            background-image: url('img/home.jpg');
+            background-size: cover;
+            background-position-y: -100px; 
+        }
+
+        @media (max-width: 980px) {
+            .home-image {
+                background-position-y: 0;
+            }
+        }
+
+        /* Services Grid */
+        .services-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--muted-gold);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--hunter-green);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--black);
+            line-height: 1.8;
+        }
+
+        /* Services Detail Page */
+        .service-detail {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            scroll-margin-top: 80px;
+        }
+
+        .service-images {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, var(--hunter-green), var(--dark-green));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted-gold);
+            font-style: italic;
+            overflow: hidden;
+        }
         
-    <!-- /.col-md-4 -->
-        <!--
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Pony Parties</h2>
-            <p class="card-text">Celebrate your child's special day with a Pony Party at Stony Brook Stables! A fun day of adventure, pony rides and goodie bags!</p>
-          </div>
-          <div class="card-footer">
-            <a href="events.html" class="btn btn-success btn-sm">Learn More</a>
-          </div>
+        .service-image img {
+            height: 100%;
+        }
+
+        @media (max-width: 1000px) {
+            .service-images {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        /* Lease Information Box */
+        .lease-info {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--muted-gold);
+        }
+
+        .lease-info h3 {
+            color: var(--hunter-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .lease-info ul {
+            margin: 1rem 0 1rem 2rem;
+            line-height: 2;
+        }
+
+        /* Horses for Sale */
+        .horses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 1000px) {
+            .horses-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        .horse-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        /* .horse-card:hover {
+            transform: translateY(-5px);
+        } */
+
+        .horse-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--hunter-green), var(--muted-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+
+        .horse-image img {
+            /* height: 100%; */
+            width: 100%;
+        }
+
+        .horse-info {
+            padding: 1.5rem;
+        }
+
+        .horse-info h3 {
+            color: var(--hunter-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .horse-details {
+            color: var(--muted-gold);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery-container {
+            text-align: center;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .facebook-link {
+            display: inline-block;
+            background: var(--hunter-green);
+            color: var(--white);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .facebook-link:hover {
+            background: var(--dark-green);
+        }
+
+        /* Contact Page */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--hunter-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .email{
+            text-decoration: none;
+            color: black;
+        }
+
+        .footer-content .email{
+            text-decoration: none;
+            color: #f5f1e8;
+        }
+
+        .contact-item strong {
+            color: var(--hunter-green);
+        }
+
+        .instructors {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .instructor {
+            margin-bottom: 3rem;
+        }
+
+        .instructor:last-child {
+            margin-bottom: 0;
+        }
+
+        .instructor-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .instructor-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--muted-gold), var(--hunter-green));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .instructor-image img{
+            width: 100%;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: var(--muted-gold);
+            color: var(--dark-green);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--light-gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: var(--cream);
+            text-align: center;
+            padding: 1.5rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-content p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--muted-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-gold);
+        }
+
+        .facebook-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--muted-gold);
+            transition: fill 0.3s;
+        }
+
+        .facebook-icon:hover {
+            fill: var(--light-gold);
+        }
+
+        @media (max-width: 980px) {
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-green);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav ul.active {
+                max-height: 400px;
+                border-top: 1px solid var(--hunter-green);
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--hunter-green);
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                font-size: 0.85rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .instructor-images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Stony Brook Stables</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#for-sale" class="nav-link">For Lease</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-      </div> -->
-      <!-- /.col-md-4 -->
+    </nav>
 
-        <!-- <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Pony Summer Camp 2025</h2>
-            <p class="card-text">Beginner through Experienced Riding Levels. Children will enjoy riding lessons, horse safety and care instruction, arts and crafts.</p>
-          </div>
-          <div class="card-footer">
-            <a href="events.html#Camp" class="btn btn-success btn-sm">Learn More</a>
-          </div>
+    <!-- HOME PAGE -->
+    <div id="home" class="section active">
+        <div class="container">
+
+            <div class="home-images">
+                <div class="home-image" ></div>
+            </div>
+
+            <h2>Welcome to Stony Brook Stables</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: var(--dark-green);">
+                Stony Brook Stables is an equine boarding and riding lesson facility located in Princeton, NJ. 
+                We offer high quality, detail oriented care for your horse as well as riding lessons for beginner 
+                through intermediate riders in a positive, friendly atmosphere!
+            </p>
+
+            <div class="services-preview">
+                <div class="service-card" data-service="boarding">
+                    <h3>Boarding</h3>
+                    <p>Stony Brook Farm employees take pride in being friendly, detail oriented, highly motivated horse people. 
+                    We offer show barn level care without the show barn atmosphere. Our facility provides stall, 
+                    retirement, and field boarding options with meticulous attention to detail and your horse's individual needs.</p>
+                </div>
+
+                <div class="service-card" data-service="lessons">
+                    <h3>Lesson Program</h3>
+                    <p>English or Western riding lessons for beginner through intermediate riders. Our quiet atmosphere 
+                    and friendly instructors will make you or your child feel welcome and comfortable to grow as a horse person.</p>
+                </div>
+
+                <div class="service-card" data-service="retirement">
+                    <h3>Retirement Boarding</h3>
+                    <p>Your senior horse will enjoy a quiet and peaceful retirement with all the spoils they deserve. 
+                    You'll have peace of mind knowing your best equine companion is comfortable and well cared for.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: var(--dark-green); margin-bottom: 1rem;">
+                    Now accepting new stall, retirement and field boarders!
+                </p>
+                <p style="font-size: 1.1rem; color: var(--dark-green); margin-bottom: 1rem;">
+                    Come be part of our team! Now accepting applications for part-time barn staff.
+                </p>
+                <a href="#contact" class="cta-button nav-link">Contact Us for a Farm Visit</a>
+            </div>
+
         </div>
-      </div>-->
-
-
     </div>
-    <!-- /.row -->
 
-  </div>
-  <!-- /.container -->
+    <!-- SERVICES PAGE -->
+    <div id="services" class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; color: var(--dark-green);">
+                Stony Brook Stables employees take pride in being friendly, detail oriented, highly motivated horse people.
+            </p>
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Stony Brook Farms and Stables, LLC.  &copy; 2025</p>
+            <div class="service-detail" id="boarding">
+                <h3>Boarding Services</h3>
+                <p>Stony Brook Stables offer show barn level care without the show barn atmosphere. Your horse will be cared for as if it were one of our own; blanket changes, application of fly spray/ sunscreen (owner supplied), scheduling the farm farrier, and a feeding program catered to the needs of your horse are just a few of the many services included in the board rate. Our goal is to keep your horse happy and healthy so you are able to enjoy your time in the barn and in the saddle to the fullest extent!</p>
+                <p style="margin-top: 1rem;"><strong>Amenities include:</strong></p>
+                <ul style="margin: 0.5rem 0 1rem 2rem; line-height: 2;">
+                    <li>19 stall barn</li>
+                    <li>Direct access to 1,600 + acres of well maintained trails</li>
+                    <li>Two Outdoor Arenas</li>
+                    <li>New Indoor Arena</li>
+                    <li>Ample turn outs rubber coated wire and wood fencing</li>
+                    <li>Access to Run-Ins in all turn outs</li>
+                    <li>and more!</li>
+                </ul>
+                <p>Please contact us for more details or to arrange a farm visit.</p>
+                <div class="service-images">
+                    <div class="service-image"><img src="img/boarding/2024/boarding1.jpg"></div>
+                    <div class="service-image"><img src="img/boarding/2024/boarding6.jpg"></div>
+                    <div class="service-image"><img src="img/boarding/2024/boarding3.jpg"></div>
+                    <div class="service-image"><img src="img/boarding/2024/indoor1.jpeg"></div>
+                    <div class="service-image"><img src="img/boarding/2024/indoor2.jpeg"></div>
+                    <div class="service-image"><img src="img/boarding/2024/boarding .jpg"></div>
+                </div>
+            </div>
+
+            <div class="service-detail" id="lessons">
+                <h3>Lesson Program</h3>
+                <p>Stony Brook Stables offers English or Western riding lessons to beginner through intermediate riders. Lessons available for adults and children. Enrolled riders benefit from a hands on approach and will learn to groom and tack their own horse as well as various aspects of horsemanship on the ground; including topics such as wrapping legs, equine nutrition, and first aid care. Our quiet, well schooled lesson horses are patient teachers and suit a variety of riders.</p>
+                <p style="margin-top: 1rem;">Stony Brook Stables instructors strive to create riders who are strong and secure in the saddle and able to communicate clearly and concisely with their horse with soft, effective aids. The quiet atmosphere of the barn and friendly instructors will make you or your child feel welcome and comfortable to grow as a horse person and most importantly - enjoy it! Beginner to Intermediate Adult lessons offered.</p>
+                <div class="service-images">
+                    <div class="service-image"><img src="img/lesson/2025/1.JPG"></div>
+                    <div class="service-image"><img src="img/lesson/2025/2.JPG"></div>
+                    <div class="service-image"><img src="img/lesson/2025/3.jpeg"></div>
+                </div>
+            </div>
+
+            <div class="service-detail" id="retirement">
+                <h3>Retirement Boarding</h3>
+                <p>Stony Brook Stables offers both stall and field board for equine retirement at a separate facility located across the street from our public facility. Amenities include an insulated eight stall barn that retains a warm temperature during winter months and always has a cool breeze during summer months. Stalls are 12' x 12', deeply bedded and have heated, automatic water fountains. Two spacious turn out fields offer lush pasture, fresh water that is heated in the winter, and 12' X 24" run ins which are cleaned regularly.</p>
+                <p style="margin-top: 1rem;">Your retiree will be cared for as one of our own. Blanket changes, fly spray/ sunscreen (provided by owner), a feeding program catered to your horse's needs, and management of farrier and veterinarian appointments are just a few items included in your board. Additionally, Stony Brook can provide grooming and bathing and any extra attention necessary as specified by the owner.</p>
+                <p style="margin-top: 1rem;">Your senior horse will enjoy a quiet and peaceful retirement with all the spoils they deserve and you will enjoy the peace of mind of knowing your best equine companion is comfortable and well cared for.</p>
+                <p style="margin-top: 1rem;">Please contact us for availability or with any further questions.</p>
+                <div class="service-images">
+                    <div class="service-image"><img src="img/retirement/2.jpg"></div>
+                    <div class="service-image"><img src="img/retirement/2024/retirement.jpg"></div>
+                    <div class="service-image"><img src="img/retirement/2024/retirement3.jpg"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.container -->
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- FOR SALE/LEASE PAGE -->
+    <div id="for-sale" class="section">
+        <div class="container">
+            <h2>Horses Available for Lease</h2>
+            
+            <div class="lease-info">
+                <h3>What does leasing a horse mean?</h3>
+                <p>When you are leasing a horse, you are paying a set fee for the ability and privilege of additional riding time on that particular horse. In many ways, leasing a horse is similar to owning a horse, with fewer financial responsibilities. For many equestrians and horse lovers, leasing a horse is a great step towards eventual horse ownership and learning everything that goes into caring for horses.</p>
+                
+                <p style="margin-top: 1.5rem;"><strong>Half lease:</strong> $450.00 per month</p>
+                <p style="margin-top: 0.5rem;"><strong>Full lease:</strong> $750.00 per month</p>
+            </div>
 
+            <div class="horses-grid">
+                <div class="horse-card">
+                    <div class="horse-image"><img src="img/sale/2024/Sugar.jpg"></div>
+                    <div class="horse-info">
+                        <h3>Sugar</h3>
+                        <p class="horse-details">Thoroughbred • 15.2hh • 5 years</p>
+                        <p>Meet Sugar, our resident equine superstar! She's always on her 
+                            A-game when it comes to taking care of our lesson kids and adult amateurs. Sugar's got some serious skills in the 
+                            manners department, and she loves nothing more than being your trusty sidekick on those long trail rides. She's 
+                            versatile, too, and can switch between English and Western riding styles like a pro. Ideally, we're looking for an 
+                            intermediate to advanced rider to lease Sugar, but don't worry if you're a beginner. Our awesome riding instructor 
+                            will be right there with you to guide you both along the way!</p>
+                    </div>
+                </div>
+
+                <div class="horse-card">
+                    <div class="horse-image"><img src="img/sale/2024/citation.jpg"></div>
+                    <div class="horse-info">
+                        <h3>Citation aka CI</h3>
+                        <p class="horse-details">Thoroughbred • 16.2hh • 16 years</p>
+                        <p>Meet Citation, he’s a shining star in our lesson program, 
+                            taking good care of beginners and pros alike! Citation is a social butterfly, always snuggling up to his buddies. 
+                            But, when it's time to work, he puts his nose to the grindstone and goes the extra mile for his rider! Whether you 
+                            prefer Western or English, Citation is your perfect partner, especially for beginners. But don't count him out if 
+                            you're an advanced rider looking for a thrilling ride! Get ready for an unforgettable experience with Citation!</p>
+                    </div>
+                </div>
+
+                <div class="horse-card">
+                    <div class="horse-image"><img src="img/sale/2024/cannoli.jpg"></div>
+                    <div class="horse-info">
+                        <h3>Cannoli</h3>
+                        <p class="horse-details">Pony • 13.2hh • 4 years</p>
+                        <p>Meet cannoli! One of our farm mascots! Cannoli is broke to ride but not drive. He is a kids pony deluxe! He loves 
+                            to be groomed, he loves to do pony rides, and he loves to do liberty if you’re looking for a best friend cannoli 
+                            is your pony to lease!</p>
+                    </div>
+                </div>
+
+                <div class="horse-card">
+                    <div class="horse-image"><img src="img/sale/2024/dorado.jpg"></div>
+                    <div class="horse-info">
+                        <h3>Dorado</h3>
+                        <p class="horse-details">Pasofino • 15.2hh • 23 years</p>
+                        <p>Meet Dorado, our resident SUPERSTAR. Are you looking to have a relaxing ride? Are you looking to have a partner you
+                            can trust anywhere you go at anytime? Are you looking for a riding partner that is confident? Dorado is your horse 
+                            to lease! Dorado is a great equine partner who you can trust in the ring and out on the trails, he is an old soul 
+                            ut still has some pep in his step where you can just get on and let dorado lead the way. A child, older adult, a 
+                            baby can ride dorado with no problem. Dorado will take care of anyone on the ground and on the saddle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: var(--dark-green); margin-bottom: 1rem;">
+                    Interested in meeting one of our horses?
+                </p>
+                <a href="#contact" class="cta-button nav-link">Contact Us to Schedule a Visit</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY PAGE -->
+    <div id="gallery" class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--dark-green);">
+                    View our latest photos and updates from the farm!
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Follow us on Facebook to see daily life at Stony Brook Stables, from morning turnout to 
+                    riding lessons, special events, and everything in between.
+                </p>
+                <a href="https://www.facebook.com/Stony-Brook-Farm-1693939340916129/" target="_blank" class="facebook-link">
+                    Visit Our Facebook Page
+                </a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                <div class="elfsight-app-2b403723-a842-4c0d-9dcb-2475347d14f2" data-elfsight-app-lazy></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p style="margin-bottom: 2rem;">
+                        We'd love to hear from you! Whether you're interested in boarding, lessons, or just want 
+                        to schedule a farm visit, please reach out.
+                    </p>
+                    <div class="contact-item">
+                        <strong>Location:</strong><br>
+                        220 Cold Soil Rd<br>
+                        Princeton, NJ 08540
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong><br>
+                        <a class="email" href="mailto:stonybrookstables.us@gmail.com">stonybrookstables.us@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong><br>
+                        (609) 225-9353
+                    </div>
+                    <div class="contact-item">
+                        <strong>Hours:</strong><br>
+                        8am - 7pm
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.7840189571925!2d-74.73994044171691!3d40.324950688302174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3e3730d831637%3A0x74b0c87ba44137d9!2s220%20Cold%20Soil%20Rd%2C%20Princeton%2C%20NJ%2008540!5e0!3m2!1sen!2sus!4v1581552227735!5m2!1sen!2sus" width="100%" height="500px" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+
+                <div class="instructors">
+                    <h3>Our Team</h3>
+                    <div class="instructor">
+                        <div class="instructor-images">
+                            <div class="instructor-image"><img src="img/to sort/Barn Manger3.jpg"></div>
+                            <div class="instructor-image"><img src="img/to sort/barn manager.jpg"></div>
+                        </div>
+                        <h4 style="color: var(--hunter-green); margin-bottom: 0.5rem;">Kristina Bauta</h4>
+                        <p style="color: var(--muted-gold); font-style: italic; margin-bottom: 0.5rem;">Barn Manger • Riding Instructor</p>
+                        <p>Meet Kristina, With a certification in equine management and over two decades of experience in the horse industry, 
+                            Kristina's got all the horsepower you need! She's ridden in all the styles- English and Western- but her expertise 
+                            is in hunter jumpers and retraining off the track thoroughbreds. Plus, she's got an exceptional background in 
+                            customer service, making her equine skills all the more charming. So, let Kristina take the reins and gallop you 
+                            into the wild and beautiful world of horses!</p>
+                    </div>
+
+                    <div class="instructor">
+                        <div class="instructor-images">
+                            <div class="instructor-image"><img src="img/instructors/alexis1.jpeg"></div>
+                            <div class="instructor-image"><img src="img/instructors/alexis2.jpeg"></div>
+                        </div>
+                        <h4 style="color: var(--hunter-green); margin-bottom: 0.5rem;">Alexis Pornovets</h4>
+                        <p style="color: var(--muted-gold); font-style: italic; margin-bottom: 0.5rem;">Riding Instructor</p>
+                        <p>Throughout her extensive career, Alexis has accumulated valuable experience across multiple equestrian disciplines, 
+                            including Hunter, Jumper, Dressage, and Eventing. She has had the privilege of collaborating with a premier trainer 
+                            at the Winter Equestrian Festival, serving in the dual roles of show groom and rider, which has further refined her 
+                            skills and knowledge in the sport.</p>
+                        <p style="margin-top: 1rem;">With over 15 years of experience as a horse trainer, barn manager, and riding instructor, Alexis is deeply committed 
+                            to helping her students realize their full potential. She believes that the journey of learning to ride should be 
+                            enjoyable and works diligently to foster a positive and supportive environment for her students. Her passion for 
+                            teaching is evident as she encourages riders of all levels to embrace their love for the sport while honing their 
+                            skills.</p>
+                    </div>
+                     <p style="font-size: 1.1rem; color: var(--dark-green); margin-bottom: 1rem; text-align: center;">
+                        Join our team! Now accepting applications for part-time barn staff.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Stony Brook Farms and Stables, LLC. &copy; 2025</p>
+            <p>Princeton, New Jersey • (609) 225-9353 • <a class="email" href="mailto:stonybrookstables.us@gmail.com">stonybrookstables.us@gmail.com</a></p>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/Stony-Brook-Farm-1693939340916129/" target="_blank" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg class="facebook-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Follow us on Facebook
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Close mobile menu
+                navMenu.classList.remove('active');
+                
+                // Get target section
+                const targetId = link.getAttribute('href').substring(1);
+                
+                // Remove active class from all links and sections
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                // Add active class to clicked link and target section
+                link.classList.add('active');
+                document.getElementById(targetId).classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Service card click functionality
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const service = card.getAttribute('data-service');
+                
+                // Remove active class from all links and sections
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                // Activate services page
+                document.querySelector('a[href="#services"]').classList.add('active');
+                document.getElementById('services').classList.add('active');
+                
+                // Scroll to specific service section
+                setTimeout(() => {
+                    const serviceSection = document.getElementById(service);
+                    if (serviceSection) {
+                        serviceSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }, 100);
+            });
+        });
+    </script>
 </body>
-
 </html>
